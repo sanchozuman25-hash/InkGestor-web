@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2 class="h4 mb-0">Productos</h2>
+  <button class="btn btn-primary" (click)="openAdd()">Añadir producto</button>
+</div>
+
+<div class="row g-3">
+  @for (item of items(); track item.id) {
+    <div class="col-12 col-md-6 col-xl-4">
+      <app-product-card [product]="item" (editClicked)="openEdit(item)" (deleteClicked)="askDelete(item)" />
+    </div>
+  } @empty {
+    <p class="text-muted">No hay productos.</p>
+  }
+</div>
+
+@if (showModal()) {
+  <app-product-modal [item]="editing()" (saved)="save($event)" (closed)="closeModal()" />
+}
+
+@if (deleting(); as d) {
+  <app-confirm-delete-modal
+    [message]="'¿Seguro que quieres eliminar este producto (' + d.name + ')?'"
+    (confirmed)="onDeleteConfirmed($event)" />
+}

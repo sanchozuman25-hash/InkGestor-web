@@ -1,0 +1,52 @@
+<div class="modal d-block" tabindex="-1" style="background: rgba(0, 0, 0, 0.5)" (click)="closed.emit()">
+  <div class="modal-dialog modal-dialog-centered" (click)="$event.stopPropagation()">
+    <form class="modal-content" #f="ngForm" (ngSubmit)="save()">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ form.id ? 'Editar' : 'Añadir' }} producto</h5>
+        <button type="button" class="btn-close" aria-label="Cerrar" (click)="closed.emit()"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label class="form-label" for="category_id">Categoría (id)</label>
+          <input id="category_id" name="category_id" type="number" step="1" class="form-control" [(ngModel)]="form.category_id" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="name">Nombre</label>
+          <input id="name" name="name" class="form-control" [(ngModel)]="form.name" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="sku">SKU</label>
+          <input id="sku" name="sku" class="form-control" [(ngModel)]="form.sku" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="description">Descripción</label>
+          <textarea id="description" name="description" rows="3" class="form-control" [(ngModel)]="form.description"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="price">Precio</label>
+          <input id="price" name="price" type="number" step="0.01" class="form-control" [(ngModel)]="form.price" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="cost">Coste</label>
+          <input id="cost" name="cost" type="number" step="0.01" class="form-control" [(ngModel)]="form.cost">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="image">Imagen (ruta)</label>
+          <input id="image" name="image" class="form-control" [(ngModel)]="form.image">
+        </div>
+        <div class="form-check form-switch mb-3">
+          <input id="is_piercing" name="is_piercing" type="checkbox" role="switch" class="form-check-input" [(ngModel)]="form.is_piercing">
+          <label class="form-check-label" for="is_piercing">Es piercing</label>
+        </div>
+        <div class="form-check form-switch mb-3">
+          <input id="active" name="active" type="checkbox" role="switch" class="form-check-input" [(ngModel)]="form.active">
+          <label class="form-check-label" for="active">Activo</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="closed.emit()">Cancelar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>

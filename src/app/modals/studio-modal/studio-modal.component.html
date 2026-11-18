@@ -1,0 +1,36 @@
+<div class="modal d-block" tabindex="-1" style="background: rgba(0, 0, 0, 0.5)" (click)="closed.emit()">
+  <div class="modal-dialog modal-dialog-centered" (click)="$event.stopPropagation()">
+    <form class="modal-content" #f="ngForm" (ngSubmit)="save()">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ form.id ? 'Editar' : 'Añadir' }} estudio</h5>
+        <button type="button" class="btn-close" aria-label="Cerrar" (click)="closed.emit()"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label class="form-label" for="name">Nombre</label>
+          <input id="name" name="name" class="form-control" [(ngModel)]="form.name" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="address">Dirección</label>
+          <input id="address" name="address" class="form-control" [(ngModel)]="form.address">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="city">Ciudad</label>
+          <input id="city" name="city" class="form-control" [(ngModel)]="form.city">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="phone">Teléfono</label>
+          <input id="phone" name="phone" class="form-control" [(ngModel)]="form.phone">
+        </div>
+        <div class="form-check form-switch mb-3">
+          <input id="active" name="active" type="checkbox" role="switch" class="form-check-input" [(ngModel)]="form.active">
+          <label class="form-check-label" for="active">Activo</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="closed.emit()">Cancelar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>

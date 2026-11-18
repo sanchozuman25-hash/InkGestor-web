@@ -1,0 +1,15 @@
+<div class="d-flex min-vh-100">
+  <nav class="sidebar bg-dark text-white p-3">
+    <h1 class="h5 mb-4">InkGestor</h1>
+    <ul class="nav nav-pills flex-column gap-1">
+      @for (link of links; track link.path) {
+        <li class="nav-item">
+          <a class="nav-link text-white" [routerLink]="link.path" routerLinkActive="active">{{ link.label }}</a>
+        </li>
+      }
+    </ul>
+  </nav>
+  <main class="flex-grow-1 bg-light p-4">
+    <router-outlet />
+  </main>
+</div>

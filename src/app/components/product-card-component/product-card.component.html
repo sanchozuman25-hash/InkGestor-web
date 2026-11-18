@@ -1,0 +1,25 @@
+<div class="card h-100 shadow-sm">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-start mb-2">
+      <h5 class="card-title mb-0">{{ product().name }}</h5>
+      <span class="badge" [class.text-bg-success]="product().active" [class.text-bg-secondary]="!product().active">
+        {{ product().active ? 'Activo' : 'Inactivo' }}
+      </span>
+    </div>
+    <p class="text-muted small mb-2">SKU: {{ product().sku }} · Categoría #{{ product().category_id }}</p>
+    <p class="card-text">{{ product().description ?? 'Sin descripción' }}</p>
+    <p class="mb-0">
+      <strong>{{ product().price }} €</strong>
+      @if (product().cost !== null) {
+        <span class="text-muted small"> (coste {{ product().cost }} €)</span>
+      }
+    </p>
+    @if (product().is_piercing) {
+      <span class="badge text-bg-warning mt-2">Piercing</span>
+    }
+  </div>
+  <div class="card-footer bg-white d-flex gap-2">
+    <button class="btn btn-sm btn-outline-dark" (click)="editClicked.emit()">Editar</button>
+    <button class="btn btn-sm btn-outline-danger" (click)="deleteClicked.emit()">Eliminar</button>
+  </div>
+</div>
