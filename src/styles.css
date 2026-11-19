@@ -1,1 +1,126 @@
-/* You can add global styles to this file, and also import other style files */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #0b0b0d;
+  --bs-body-bg-rgb: 11, 11, 13;
+  --bs-body-color: #e9e9ec;
+  --bs-emphasis-color: #ffffff;
+  --bs-secondary-color: #8e8e96;
+  --bs-secondary-bg: #17171b;
+  --bs-tertiary-bg: #17171b;
+  --bs-border-color: #2a2a2f;
+}
+
+.btn-primary {
+  --bs-btn-color: #0b0b0d;
+  --bs-btn-bg: #c9a227;
+  --bs-btn-border-color: #c9a227;
+  --bs-btn-hover-color: #0b0b0d;
+  --bs-btn-hover-bg: #b39125;
+  --bs-btn-hover-border-color: #b39125;
+  --bs-btn-active-color: #0b0b0d;
+  --bs-btn-active-bg: #a58622;
+  --bs-btn-active-border-color: #a58622;
+  --bs-btn-disabled-color: #0b0b0d;
+  --bs-btn-disabled-bg: #c9a227;
+  --bs-btn-disabled-border-color: #c9a227;
+  --bs-btn-focus-shadow-rgb: 201, 162, 39;
+  font-weight: 600;
+}
+
+.btn-danger {
+  --bs-btn-bg: #900b09;
+  --bs-btn-border-color: #900b09;
+  --bs-btn-hover-bg: #7a0908;
+  --bs-btn-hover-border-color: #7a0908;
+  --bs-btn-active-bg: #6a0807;
+  --bs-btn-active-border-color: #6a0807;
+}
+
+.btn-outline-danger {
+  --bs-btn-color: #e5534b;
+  --bs-btn-border-color: #900b09;
+  --bs-btn-hover-bg: #900b09;
+  --bs-btn-hover-border-color: #900b09;
+  --bs-btn-hover-color: #ffffff;
+}
+
+.card {
+  --bs-card-bg: #17171b;
+  --bs-card-border-color: #2a2a2f;
+  --bs-card-border-radius: 0.9rem;
+  --bs-card-cap-bg: transparent;
+}
+
+.card-footer {
+  border-top-color: #2a2a2f;
+}
+
+.modal-content {
+  --bs-modal-bg: #17171b;
+  --bs-modal-border-color: #2a2a2f;
+  --bs-modal-border-radius: 0.9rem;
+  --bs-modal-header-border-color: #2a2a2f;
+  --bs-modal-footer-border-color: #2a2a2f;
+}
+
+.form-control,
+.form-select {
+  background-color: #0f0f12;
+  border-color: #2a2a2f;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: #0f0f12;
+  border-color: #c9a227;
+  box-shadow: 0 0 0 0.2rem rgba(201, 162, 39, 0.25);
+}
+
+.form-check-input:checked {
+  background-color: #c9a227;
+  border-color: #c9a227;
+}
+
+.form-check-input:focus {
+  border-color: #c9a227;
+  box-shadow: 0 0 0 0.2rem rgba(201, 162, 39, 0.25);
+}
+
+.table {
+  --bs-table-bg: #17171b;
+  --bs-table-border-color: #2a2a2f;
+  --bs-table-hover-bg: #1f1f24;
+  --bs-table-hover-color: #e9e9ec;
+  margin-bottom: 0;
+}
+
+.table thead th {
+  color: #c9a227;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.table-responsive {
+  border: 1px solid #2a2a2f;
+  border-radius: 0.9rem;
+}
+
+.badge {
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.badge.text-bg-success {
+  background-color: rgba(34, 197, 94, 0.15) !important;
+  color: #4ade80 !important;
+}
+
+.badge.text-bg-warning {
+  background-color: #3a1e0c !important;
+  color: #f59e0b !important;
+}
+
+.badge.text-bg-secondary {
+  background-color: #26262b !important;
+  color: #8e8e96 !important;
+}

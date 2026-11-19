@@ -6,6 +6,6 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 export const routes: Routes = [
   { path: '', redirectTo: 'studios', pathMatch: 'full' },
   { path: 'studios', component: StudiosPageComponent },
-  { path: 'products', component: ProductsPageComponent },
+  { path: 'studios/:studioId/products', component: ProductsPageComponent },
   { path: '**', component: NotFoundPageComponent },
 ];

@@ -4,8 +4,8 @@
 </div>
 
 <div class="table-responsive">
-  <table class="table table-hover align-middle bg-white">
-    <thead class="table-dark">
+  <table class="table table-hover align-middle">
+    <thead>
       <tr>
         <th>#</th>
         <th>Nombre</th>
@@ -29,8 +29,9 @@
               {{ item.active ? 'Sí' : 'No' }}
             </span>
           </td>
-          <td class="text-end text-nowrap">
-            <button class="btn btn-sm btn-outline-dark me-1" (click)="openEdit(item)">Editar</button>
+            <td class="text-end text-nowrap">
+            <a class="btn btn-sm btn-primary me-1" [routerLink]="['/studios', item.id, 'products']" [queryParams]="{ name: item.name }">Productos</a>
+            <button class="btn btn-sm btn-outline-light me-1" (click)="openEdit(item)">Editar</button>
             <button class="btn btn-sm btn-outline-danger" (click)="askDelete(item)">Eliminar</button>
           </td>
         </tr>

@@ -15,11 +15,12 @@
       }
     </p>
     @if (product().is_piercing) {
-      <span class="badge text-bg-warning mt-2">Piercing</span>
-    }
+      <span class="badge" [class.text-bg-success]="product().quantity > product().min_quantity" [class.text-bg-warning]="product().quantity <= product().min_quantity">
+        {{ product().quantity }} uds{{ product().quantity <= product().min_quantity ? ' · bajo' : '' }}
+      </span>    }
   </div>
-  <div class="card-footer bg-white d-flex gap-2">
-    <button class="btn btn-sm btn-outline-dark" (click)="editClicked.emit()">Editar</button>
+  <div class="card-footer d-flex gap-2">
+    <button class="btn btn-sm btn-outline-light" (click)="editClicked.emit()">Editar</button>
     <button class="btn btn-sm btn-outline-danger" (click)="deleteClicked.emit()">Eliminar</button>
   </div>
 </div>

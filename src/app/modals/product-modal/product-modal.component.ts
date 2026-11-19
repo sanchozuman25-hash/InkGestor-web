@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 
 export interface Product {
   id: number;
+  studio_id: number;
   category_id: number;
   name: string;
   sku: string;
@@ -12,6 +13,8 @@ export interface Product {
   image: string | null;
   is_piercing: boolean;
   active: boolean;
+  quantity: number;
+  min_quantity: number;
 }
 
 @Component({
@@ -32,6 +35,7 @@ export class ProductModalComponent implements OnInit {
       ? { ...current }
       : {
           id: 0,
+          studio_id: 0,
           category_id: 1,
           name: '',
           sku: '',
@@ -41,6 +45,8 @@ export class ProductModalComponent implements OnInit {
           image: null,
           is_piercing: false,
           active: true,
+          quantity: 0,
+          min_quantity: 0,
         };
   }
 

@@ -8,8 +8,5 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
 })
 export class App {
-  links = [
-    { path: 'studios', label: 'Estudios' },
-    { path: 'products', label: 'Productos' },
-  ];
+  links = [{ path: 'studios', label: 'Estudios' }];
 }

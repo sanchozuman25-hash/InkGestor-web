@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { ConfirmDeleteModalComponent } from '../../shared/confirm-delete-modal/confirm-delete-modal.component';
 import { Studio, StudioModalComponent } from '../../modals/studio-modal/studio-modal.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-studios-page',
-  imports: [StudioModalComponent, ConfirmDeleteModalComponent],
-  templateUrl: './studios-page.component.html',
+  imports: [RouterLink, StudioModalComponent, ConfirmDeleteModalComponent],  templateUrl: './studios-page.component.html',
 })
 export class StudiosPageComponent {
   items = signal<Studio[]>([

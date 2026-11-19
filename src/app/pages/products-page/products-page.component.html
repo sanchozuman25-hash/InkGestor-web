@@ -1,5 +1,9 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
-  <h2 class="h4 mb-0">Productos</h2>
+  <div>
+    <a class="text-muted small text-decoration-none" routerLink="/studios">← Estudios</a>
+    <h2 class="h4 mb-0">{{ studioName }}</h2>
+    <p class="text-muted small mb-0">Productos y stock</p>
+  </div>
   <button class="btn btn-primary" (click)="openAdd()">Añadir producto</button>
 </div>
 
@@ -9,7 +13,7 @@
       <app-product-card [product]="item" (editClicked)="openEdit(item)" (deleteClicked)="askDelete(item)" />
     </div>
   } @empty {
-    <p class="text-muted">No hay productos.</p>
+    <p class="text-muted">Este estudio todavía no tiene productos.</p>
   }
 </div>
 
